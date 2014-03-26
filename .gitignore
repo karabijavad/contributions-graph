@@ -1,0 +1,3 @@
+.bundle/
+neo4j*/
+data/*.csv
