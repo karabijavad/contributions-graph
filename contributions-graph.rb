@@ -5,7 +5,7 @@ require 'csv'
 
 Cadet::BatchInserter::Session.open "neo4j-community-2.0.1/data/graph.db" do
 
-  CSV.foreach("./FEC_Contributions_2012.csv", :headers => :first_row) do |row|
+  CSV.foreach("./data/FEC_Contributions_2012.csv", :headers => :first_row) do |row|
     next unless row["Recipient"] and row["Contributor/Lender/Transfer Name 1"] and row["Employer"] and row["Occupation"]
 
     contributor = Contributor_by_name row["Contributor/Lender/Transfer Name 1"]
